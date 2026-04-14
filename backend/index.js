@@ -49,7 +49,7 @@ app.post("/api/scan", verifyToken, async (req, res) => {
   try {
     const response = await fetch(normalizedUrl.href, { redirect: "follow", timeout: 10000 });
     const body = await response.text();
-    
+
     let findings = [];
     try {
       findings = analyzeResponse(normalizedUrl.href, response, body);

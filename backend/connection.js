@@ -1,4 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
+
+const dns = require("node:dns/promises");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/autowebappvulscaner";
 
